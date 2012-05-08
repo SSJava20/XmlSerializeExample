@@ -21,7 +21,7 @@ public class XmlSerialize implements ISerialize
 {
 
     @Override
-    public void Write(Person toWrite, File to) throws FileNotFoundException
+    public void Write(Object toWrite, File to) throws FileNotFoundException
     {
         //Serializer
         XStream xs = new XStream();
@@ -32,10 +32,10 @@ public class XmlSerialize implements ISerialize
     }
 
     @Override
-    public Person Read(Person toWrite, File from) throws FileNotFoundException
+    public Object Read(File from) throws FileNotFoundException
     {
         XStream xs = new XStream(new DomDriver());
-        Person result = new Person();
+        Object result = new Object();
 
         FileInputStream fis = new FileInputStream(from);
         xs.fromXML(fis, result);

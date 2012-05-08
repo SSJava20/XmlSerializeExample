@@ -14,6 +14,7 @@ import java.io.FileNotFoundException;
  */
 public interface ISerialize
 {
-    public void Write(Person toWrite, File to) throws FileNotFoundException;
-    public Person Read(Person toWrite, File from) throws FileNotFoundException;
+    public void Write(Object toWrite, File to) throws FileNotFoundException;
+
+    public Object Read(File from) throws FileNotFoundException;
 }
